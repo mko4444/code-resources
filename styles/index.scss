@@ -1,1 +1,127 @@
 @import 'presets';
+
+.app {
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  position: relative;
+}
+
+body, button, input, input::placeholder {
+  font-family: --apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 28px;
+  font-weight: 400;
+  color: #020075;
+
+  // overflow: auto;
+
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.sc--sidebar {
+  position: fixed;
+  width: 320px;
+  height: 100vh;
+
+  // background-color: blue;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  ul {
+    list-style: none;
+    padding: 16px;
+
+    > li {
+      @include transition(all, 150ms);
+      @include border-radius(6px);
+      @include user-select(none);
+
+      height: 48px;
+      width: calc(100% - 24px);
+
+      padding-left: 12px;
+      padding-right: 16px;
+
+      text-transform: capitalize;
+
+      &.expand {
+        height: auto;
+        li {
+          height: 48px;
+          opacity: .5;
+          pointer-events: inherit;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+        > div > div {
+          transform: rotate(90deg);
+        }
+      }
+
+      &:not(.expand) {
+        &:hover {
+          cursor: pointer;
+          opacity: .75;
+        }
+      }
+
+      > div {
+        width: 100%;
+        height: 48px;
+
+        > div {
+          @include transition(all, 150ms);
+          transform: rotate(0);
+          width: 14px;
+          height: 14px;
+          margin-right: 6px;
+          margin-left: -20px;
+          font-size: 14px;
+        }
+      }
+
+      > li {
+        @include transition(all, 150ms);
+        height: 0;
+        opacity: 0;
+
+        font-size: 16px;
+        margin-left: 16px;
+        pointer-events: none;
+
+        &:hover {
+          cursor: pointer;
+          opacity: .75;
+        }
+      }
+
+      li.active {
+        color: #2400FF;
+      }
+    }
+  }
+}
+.sc--main {
+  margin-left: calc(320px + 3vw);
+  width: calc(100% - 320px - 3vw);
+  height: 1800px;
+  // background-color: green;
+}
