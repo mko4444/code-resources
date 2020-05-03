@@ -1,4 +1,4 @@
-{
+export default {
     "Newsletter": [
        {
           "name": "Swift Developments",
