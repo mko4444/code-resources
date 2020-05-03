@@ -14,6 +14,16 @@
   position: relative;
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+}
+
 body, button, input, input::placeholder {
   font-family: --apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -24,7 +34,7 @@ body, button, input, input::placeholder {
   font-size: 28px;
   font-weight: 400;
   color: #020075;
-
+  background: linear-gradient(122.01deg, rgba(0, 163, 255, 0.05) 0%, rgba(90, 127, 255, 0.05) 34.38%, rgba(185, 71, 255, 0.05) 66.67%, rgba(255, 71, 193, 0.05) 98.44%), #FFFFFF;
   // overflow: auto;
 
   margin: 0;
@@ -154,8 +164,8 @@ ul {
     li {
       @include border-radius(20px);
       padding-top: 80%;
-      background-color: rgba(2,0,117,.25);
-      box-shadow: 0 15px 20px 0 rgba(2,0,117,.15);
+      background-color: white;
+      box-shadow: 0 15px 28px 0 rgba(2,0,117,.1);
     }
   }
 
