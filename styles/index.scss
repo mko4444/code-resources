@@ -1,15 +1,13 @@
 @import 'presets';
 
 .app {
-  min-height: calc(100vh - 96px);
+  min-height: 100vh;
   width: calc(100vw - 56px);
   max-width: 1280px;
 
 
   margin-left: 28px;
   margin-right: 28px;
-  padding-top: 48px;
-  padding-bottom: 48px;
 
   margin: 0 auto;
 
@@ -43,10 +41,8 @@ ul {
 
 .sc--sidebar {
   position: fixed;
-  width: 288px;
-  height: 100vh;
-
-  // background-color: blue;
+  width: 248px;
+  height: calc(100vh - 96px);
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -54,89 +50,97 @@ ul {
   font-size: 20px;
   font-weight: 600;
 
-  > ul {
-    padding-left: 16px;
-    padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 48px;
+  padding-top: 48px;
 
-    > li {
-      @include transition(all, 150ms);
-      @include border-radius(6px);
-      @include user-select(none);
+  span {
+    overflow: hidden;
+    flex: 1;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* number of lines to show */
+  }
 
-      height: 48px;
-      width: calc(100% - 24px);
+  > li {
+    @include transition(all, 150ms);
+    @include border-radius(6px);
+    @include user-select(none);
 
-      padding-left: 12px;
-      padding-right: 16px;
+    height: 48px;
+    width: calc(100% - 24px);
 
-      text-transform: capitalize;
+    text-transform: capitalize;
 
-      &.expand {
-        height: auto;
-        li {
-          height: 48px;
-          opacity: .5;
-          pointer-events: inherit;
-          font-weight: 500;
+    &.expand {
+      height: auto;
+      li {
+        height: 48px;
+        opacity: .5;
+        pointer-events: inherit;
+        font-weight: 500;
 
-          &:hover {
-            opacity: .75;
-          }
-
-          &.active {
-            opacity: 1;
-          }
-        }
-        > div > div {
-          transform: rotate(90deg);
-        }
-      }
-
-      &:not(.expand) {
         &:hover {
-          cursor: pointer;
           opacity: .75;
         }
+
+        &.active {
+          opacity: 1;
+        }
       }
+      > div > div {
+        transform: rotate(90deg);
+      }
+    }
+
+    &:not(.expand) {
+      &:hover {
+        cursor: pointer;
+        opacity: .75;
+      }
+    }
+
+    > div {
+      width: 100%;
+      height: 48px;
 
       > div {
-        width: 100%;
-        height: 48px;
-
-        > div {
-          @include transition(all, 150ms);
-          transform: rotate(0);
-          width: 14px;
-          height: 14px;
-          margin-right: 6px;
-          margin-left: -20px;
-          font-size: 14px;
-        }
-      }
-
-      li {
         @include transition(all, 150ms);
-        height: 0;
-        opacity: 0;
-
-        font-size: 16px;
-        pointer-events: none;
-
-        &:hover {
-          cursor: pointer;
-          opacity: .75;
-        }
+        transform: rotate(0);
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+        margin-left: -20px;
+        font-size: 14px;
       }
+    }
 
-      li.active {
-        color: #2400FF;
+    li {
+      @include transition(all, 150ms);
+      height: 0;
+      opacity: 0;
+
+      font-size: 16px;
+      pointer-events: none;
+
+      &:hover {
+        cursor: pointer;
+        opacity: .75;
       }
+    }
+
+    li.active {
+      color: #2400FF;
     }
   }
 }
 .sc--main {
   margin-left: calc(288px + 28px);
-  height: 1800px;
+  min-height: calc(100vh - 96px);
+  padding-bottom: 48px;
+  padding-top: 48px;
+
   // background-color: green;
 
   ul {
