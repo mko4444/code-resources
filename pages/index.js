@@ -26,6 +26,8 @@ const App = ({ data, query }) => {
 
 
   useEffect(() => {
+    console.log(data.projects.filter(p => p.category === query.id));
+    
     // expands the category that contains the active subcategory
     !!query.cat && document.getElementById(`cat_${query.cat}`).classList.add('expand')
   }, [])
@@ -60,8 +62,8 @@ const App = ({ data, query }) => {
       <section className='sc--main col'>
         <h1>{currentCat.title || 'Projects'}</h1>
         <ul>
-          {data.projects.filter(p => p.category === query.cat).map((p, i) =>
-            <li><Cell name="name" href="link" desc="desc"/></li>
+          {data.projects.filter(p => p.category === query.id).map((p, i) =>
+            <li><Cell name={p.title} href={p.homepage} desc={p.description}/></li>
           )}
         </ul>
       </section>
