@@ -32,9 +32,8 @@ body, button, input, input::placeholder {
   -moz-osx-font-smoothing: grayscale;
 
   font-size: 28px;
-  font-weight: 400;
-  //color: #020075;
-  //background: linear-gradient(122.01deg, rgba(0, 163, 255, 0.05) 0%, rgba(90, 127, 255, 0.05) 34.38%, rgba(185, 71, 255, 0.05) 66.67%, rgba(255, 71, 193, 0.05) 98.44%), #FFFFFF;
+  color: #020075;
+  background: linear-gradient(122.01deg, rgba(0, 163, 255, 0.05) 0%, rgba(90, 127, 255, 0.05) 34.38%, rgba(185, 71, 255, 0.05) 66.67%, rgba(255, 71, 193, 0.05) 98.44%), #FFFFFF;
   // overflow: auto;
 
   margin: 0;
@@ -58,7 +57,6 @@ ul {
   overflow-x: hidden;
 
   font-size: 20px;
-  font-weight: 600;
 
   padding-left: 16px;
   padding-right: 16px;
@@ -93,7 +91,6 @@ ul {
         height: 48px;
         opacity: .75;
         pointer-events: inherit;
-        font-weight: 500;
 
         &:hover {
           opacity: .5;
@@ -176,12 +173,10 @@ ul {
 
   h1 {
     font-size: calc(16px + 2vw);
-    font-weight: 600;
   }
 
   h2 {
     font-size: calc(12px + 1vw);
-    font-weight: 500;
     opacity: .75;
   }
 
@@ -197,6 +192,7 @@ ul {
     font-size: 1.5vw;
     color: rgb(0, 0, 0);
     font-weight: 700;
+    width: 50%;
 }
 
 .name, .git-div{
@@ -204,9 +200,10 @@ ul {
 }
 
 .git-img{
-  height: 1.5vw;
-  width: 1.5vw;
-  padding-top: 15%;
+  height: 1vw;
+  width: 1vw;
+  padding-top: 0%;
+  padding-right: 5%;
 }
 
 .git-div, .git-img, .git-label{
@@ -214,6 +211,8 @@ ul {
 }
 
 .git-label{
+  padding-top: 0%;
+  margin-top: 0%;
 }
 
 .git-url{
@@ -231,11 +230,13 @@ ul {
   background-color: #F2F2F2;
   width: 20%;
   border-radius: 5px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 4%;
-  padding-top: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  padding-top: 2%;
   margin-right: 20%;
+  z-index: 999;
+  top: 0;
 }
 
 .desc{
@@ -260,6 +261,5 @@ ul {
   padding-left: 5%;
   margin-bottom: 10%;
   margin-top: 10%;
-  box-shadow: 0 5px 10px 0 rgba(2,0,10,.1);
   border-radius: 5px;
 }
