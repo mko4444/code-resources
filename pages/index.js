@@ -67,7 +67,7 @@ const App = ({ data, query }) => {
           return(
             <li id={`cat_${name}`}>
               {/* <div className='row-fs-c' onClick={() => router.push({pathname: '/', query: { cat: name }})}><span>{name}</span></div> */}
-              <div className='row-fs-c' onClick={() => loadPage(name)}><span>{name}</span></div>
+              <div className='row-fs-c categoryDiv' onClick={() => loadPage(name)}><span>{name}</span></div>
             </li>
           )
         })
@@ -79,7 +79,7 @@ const App = ({ data, query }) => {
 
           return(
             <div>
-              <p>{p}</p>
+              <div><p className="categoryParagraph">{p}</p></div>
               <ul>
                 {
                   projects[p].map((project, i) => {
