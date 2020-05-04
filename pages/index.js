@@ -30,6 +30,8 @@ const App = ({ data, query }) => {
     !!query.cat && document.getElementById(`cat_${query.cat}`).classList.add('expand')
   }, [])
 
+
+  let currentCat = data.categories.filter(x => x.id === query.id)[0] || false
   return(
     <div className='app'>
       <ul className='sc--sidebar'>
@@ -56,21 +58,11 @@ const App = ({ data, query }) => {
         }
       </ul>
       <section className='sc--main col'>
-        <h1>Category</h1>
+        <h1>{currentCat.title || 'Projects'}</h1>
         <ul>
-          <li><Cell name="name" href="link" desc="desc"/></li>
-          <li><Cell name="name" href="link" desc="desc"/></li>
-        </ul>
-        <ul>
-          <li><Cell name="name" href="link" desc="desc"/></li>
-          <li><Cell name="name" href="link" desc="desc"/></li>
-        </ul>
-        <h2>Sub-category</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {data.projects.filter(p => p.category === query.cat).map((p, i) =>
+            <li><Cell name="name" href="link" desc="desc"/></li>
+          )}
         </ul>
       </section>
     </div>
