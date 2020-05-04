@@ -67,10 +67,13 @@ ul {
 
   span {
     overflow: hidden;
-    flex: 1;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1; /* number of lines to show */
+
+    &:nth-child(1) {
+      flex: 1;
+    }
   }
 
   > li {
@@ -86,13 +89,14 @@ ul {
     &.expand {
       height: auto;
       li {
+        @include transition(all, 150ms);
         height: 48px;
-        opacity: .5;
+        opacity: .75;
         pointer-events: inherit;
         font-weight: 500;
 
         &:hover {
-          opacity: .75;
+          opacity: .5;
         }
 
         &.active {
@@ -118,11 +122,11 @@ ul {
       > div {
         @include transition(all, 150ms);
         transform: rotate(0);
-        width: 14px;
-        height: 14px;
-        margin-right: 6px;
-        margin-left: -20px;
-        font-size: 14px;
+        width: 12px;
+        // height: 20px;
+        margin-right: 8px;
+        // margin-left: -28px;
+        font-size: 16px;
       }
     }
 
@@ -132,6 +136,7 @@ ul {
       opacity: 0;
 
       font-size: 16px;
+      margin-left: 20px;
       pointer-events: none;
 
       &:hover {
