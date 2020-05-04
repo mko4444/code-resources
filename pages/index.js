@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import "isomorphic-fetch"
+
+import data from '../data';
+import Cell from '../components/cell';
+
 let cn = require('classnames');
 
 const parseCategories = data => {
@@ -54,10 +58,12 @@ const App = ({ data, query }) => {
       <section className='sc--main col'>
         <h1>Category</h1>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><Cell name="name" href="link" desc="desc"/></li>
+          <li><Cell name="name" href="link" desc="desc"/></li>
+        </ul>
+        <ul>
+          <li><Cell name="name" href="link" desc="desc"/></li>
+          <li><Cell name="name" href="link" desc="desc"/></li>
         </ul>
         <h2>Sub-category</h2>
         <ul>
