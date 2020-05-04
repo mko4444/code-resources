@@ -24,25 +24,30 @@ const App = ({ data, query }) => {
   let [ categories, setCategories ] = useState(parseCategories(data.categories)),
       router = useRouter();
   let [ projects, setProjects ] = useState({});
+  let [ category, setCategory ] = useState("guides");
 
   useEffect(() => {
-    console.log(query.cat);
-    loadPage("audio");
+    loadPage(category);
     // expands the category that contains the active subcategory
     !!query.cat && document.getElementById(`cat_${query.cat}`).classList.add('expand')
   }, [])
 
 
   function loadPage(e){
+    var catStr = e.toLowerCase().replace('-', ' ')
+    var name = catStr.charAt(0).toUpperCase() + catStr.slice(1)
+    setCategory(name);
 
     var projects = {}
     var parents = data.categories.filter(p => p.parent === e);
     
     for (var i = 0; i < parents.length; i++) {
       var d = data.projects.filter(p => p.category === parents[i].id)
-      projects[parents[i].id] = [];
+      var idStr =  parents[i].id.toLowerCase().replace('-', ' ');
+      var parentId = idStr.charAt(0).toUpperCase() + idStr.slice(1)
+      projects[parentId] = [];
       for (var j = 0; j < parents.length; j++) {
-        projects[parents[i].id].push(d[j]);
+        projects[parentId].push(d[j]);
       }
     }
 
@@ -69,7 +74,7 @@ const App = ({ data, query }) => {
         }
       </ul>
       <section className='sc--main col'>
-        <h1>{currentCat.title || 'Projects'}</h1>
+        <h1>{category}</h1>
         {Object.keys(projects).map((p, i) => {
 
           return(
