@@ -27,7 +27,7 @@ const App = ({ data, query }) => {
 
   useEffect(() => {
     // expands the category that contains the active subcategory
-    document.getElementById(`cat_${query.cat}`).classList.add('expand')
+    !!query.cat && document.getElementById(`cat_${query.cat}`).classList.add('expand')
   }, [])
 
   return(

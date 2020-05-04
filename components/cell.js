@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 const Cell = props => {
 
-    useEffect( async () => {
-
-    })
 
     return(
         <div className="the-cell">
