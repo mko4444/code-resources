@@ -163,7 +163,7 @@ ul {
 
     li {
       @include border-radius(20px);
-      padding-top: 80%;
+      padding-top: 0%;
       background-color: white;
       box-shadow: 0 15px 28px 0 rgba(2,0,117,.1);
     }
@@ -185,4 +185,64 @@ ul {
     padding: 0;
     margin-bottom: 36px;
   }
+}
+
+
+.name{
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.name, .git-div{
+  display: inline;
+}
+
+.git-img{
+  height: 1.5vw;
+  width: 1.5vw;
+  padding-top: 15%;
+}
+
+.git-div, .git-img, .git-label{
+  display: inline;
+}
+
+.git-label{
+}
+
+.git-url{
+  top: 0;
+  font-size: 1.3vw;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin-top: 0%;
+  padding-left: 5%;
+  text-align: center;
+}
+
+.git-div{
+  float: right;
+  background-color: #F2F2F2;
+  width: 20%;
+  border-radius: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 4%;
+  padding-top: 4%;
+  margin-right: 20%;
+}
+
+.desc{
+  margin-top: 10%;
+  font-size: 1.5w;
+}
+
+.the-cell{
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;  
+  width: 30vw;
+  height: 13vw;
 }
